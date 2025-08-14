@@ -42,14 +42,15 @@ CREATE TABLE product (prod_id INT NOT NULL PRIMARY KEY, prod_name VARCHAR(50), m
 CREATE TABLE supplier (supplier_id INT NOT NULL PRIMARY KEY, name VARCHAR(100), contact_person VARCHAR(100), email VARCHAR(100), phone VARCHAR(20), address TEXT);
 CREATE TABLE transaction (transaction_id INT NOT NULL PRIMARY KEY, cust_id INT, prod_id INT, quantity INT, total_amount DECIMAL(10,2), transaction_date DATE, transaction_type VARCHAR(50), KEY cust_id (cust_id), KEY prod_id (prod_id));
 CREATE TABLE work_experience (emp_id INT NOT NULL PRIMARY KEY, duration VARCHAR(100));
-
 ----------------
 
 git clone https://github.com/swrjks/Inventory_Management_System.git
 cd Inventory_Management_System 
-
 ----------------
 
+Inventory_Management_System-main\backend\app.py
+Change your MySql password
+----------------
 Open terminal 
 cd backend
 python -m venv dbms
@@ -60,7 +61,6 @@ pip install mysql-connector
 pip install python-dotenv
 
 python app.py
-
 ----------------
 
 Open new terminal
