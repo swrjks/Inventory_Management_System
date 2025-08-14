@@ -30,6 +30,21 @@ A full-stack **Inventory Management System** for managing products, suppliers, e
 ### 1. Clone the Repository
 
 ```bash
+
+MySQL
+CREATE DATABASE shop;
+
+CREATE TABLE customer (cust_id INT NOT NULL PRIMARY KEY, name VARCHAR(50), email VARCHAR(100), address VARCHAR(255), ph_no VARCHAR(15), transaction_id INT, KEY transaction_id (transaction_id));
+CREATE TABLE employee (emp_id INT NOT NULL PRIMARY KEY, name VARCHAR(100), position VARCHAR(100), salary DECIMAL(10,2), email VARCHAR(100), hire_date DATE);
+CREATE TABLE low_stock_products (prod_id INT NOT NULL, prod_name VARCHAR(50), stock INT);
+CREATE TABLE membership (cust_id INT NOT NULL PRIMARY KEY, name VARCHAR(100), frequency INT DEFAULT 0);
+CREATE TABLE product (prod_id INT NOT NULL PRIMARY KEY, prod_name VARCHAR(50), mrp DECIMAL(10,2), stock INT, category VARCHAR(100), supplier_id INT);
+CREATE TABLE supplier (supplier_id INT NOT NULL PRIMARY KEY, name VARCHAR(100), contact_person VARCHAR(100), email VARCHAR(100), phone VARCHAR(20), address TEXT);
+CREATE TABLE transaction (transaction_id INT NOT NULL PRIMARY KEY, cust_id INT, prod_id INT, quantity INT, total_amount DECIMAL(10,2), transaction_date DATE, transaction_type VARCHAR(50), KEY cust_id (cust_id), KEY prod_id (prod_id));
+CREATE TABLE work_experience (emp_id INT NOT NULL PRIMARY KEY, duration VARCHAR(100));
+
+----------------
+
 git clone https://github.com/swrjks/Inventory_Management_System.git
 cd Inventory_Management_System 
 
@@ -48,14 +63,8 @@ python app.py
 
 ----------------
 
+Open new terminal
 cd frontend
 npm install axios
 npm install
 npm run dev
-
-
-
-cd frontend
-npm install
-npm run dev
-
