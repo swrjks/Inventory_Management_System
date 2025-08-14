@@ -54,6 +54,7 @@ Inventory_Management_System-main\backend\app.py
 Change your MySql password
 
 ----------------
+
 Open terminal 
 cd backend
 python -m venv dbms
