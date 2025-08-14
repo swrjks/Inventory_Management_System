@@ -1,0 +1,22 @@
+git clone https://github.com/swrjks/Inventory_Management_System.git
+cd Inventory_Management_System 
+
+----------------
+
+Open terminal 
+cd backend
+python -m venv dbms
+dbms\Scripts\activate 
+
+pip install flask flask-cors mysql-connector-python
+pip install mysql-connector
+pip install python-dotenv
+
+python app.py
+
+----------------
+
+cd frontend
+npm install axios
+npm install
+npm run dev
